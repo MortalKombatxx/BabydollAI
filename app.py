@@ -47,7 +47,7 @@ if st.button("Submit Profile for Verification"):
                     "Content-Type": "application/json"
                 }
                 data = {
-                    "model": "llama3-8b-8192",
+                    "model": "llama-3.1-8b-instant",
                     "response_format": {"type": "json_object"},
                     "messages": [
                         {"role": "system", "content": SYSTEM_PROMPT},
