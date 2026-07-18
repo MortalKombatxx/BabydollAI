@@ -8,7 +8,7 @@ st.title("🎭 BabydollAI: Onboarding Gateway")
 st.write("Advanced behavioral screening infrastructure to detect weaponized therapy-speak and covert manipulation.")
 
 # 2. Hardcoded Secure API Key (No password box needed for friends)
-groq_api_key = "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"
+groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # 3. Define the System Prompt Engine
 SYSTEM_PROMPT = """
