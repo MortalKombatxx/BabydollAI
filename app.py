@@ -3,7 +3,7 @@ import openai
 import json
 
 # 1. Setup Page Configurations
-st.set_page_config(page_title="SafeMatch AI Gateway", page_icon="🛡️", layout="centered")
+st.set_page_config(page_title="BabydollAI Gateway", page_icon="🛡️", layout="centered")
 st.title("🛡️ SafeMatch AI: Onboarding Gateway")
 st.write("Psychological preventative screening interface for high-value dating applications.")
 
