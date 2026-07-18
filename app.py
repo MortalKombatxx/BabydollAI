@@ -8,7 +8,8 @@ st.title("🎭 BabydollAI: Premium Onboarding Gateway")
 st.write("Advanced behavioral screening infrastructure to detect weaponized therapy-speak and covert manipulation.")
 
 # 2. Secure API Key Connection via UI Input
-groq_api_key = st.text_input("Enter Groq API Key to Test (Free Tier):", type="password")
+groq_api_key = "PASTE_YOUR_ACTUAL_GSK_KEY_HERE"
+
 
 # 3. Define the System Prompt Engine (Strict Forensic Mode with Advanced Output)
 SYSTEM_PROMPT = """
@@ -36,9 +37,9 @@ user_input = st.text_area(
 )
 
 if st.button("Submit Profile for Deep Behavioral Analysis"):
-    if not groq_api_key:
-        st.error("Please enter a Groq API key to process.")
-    elif not user_input:
+   if st.button("Submit Profile for Deep Behavioral Analysis"):
+    if not user_input:
+
         st.warning("Please input a sample text response to test.")
     else:
         with st.spinner("Executing forensic linguistic analysis..."):
