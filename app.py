@@ -27,9 +27,8 @@ You MUST return a raw JSON object ONLY matching this schema precisely:
 """
 
 # 4. Building the User Interface Front-End
-st.subheader("Onboarding Evaluation Question:")
 user_input = st.text_area(
-    "Prompt: 'Describe a time a past partner didn't meet your expectations, and how you managed it.'",
+    "Prompt: 'What does a healthy boundary look like to you, and how do you handle it when a partner brings up a mistake you made?'",
     placeholder="Type your response here..."
 )
 
