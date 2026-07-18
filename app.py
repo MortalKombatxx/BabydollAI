@@ -4,17 +4,16 @@ import json
 
 # 1. Setup Page Configurations
 st.set_page_config(page_title="BabydollAI Gateway", page_icon="🎭", layout="centered")
-st.title("🎭 BabydollAI: Premium Onboarding Gateway")
+st.title("🎭 BabydollAI: Onboarding Gateway")
 st.write("Advanced behavioral screening infrastructure to detect weaponized therapy-speak and covert manipulation.")
 
-# 2. Secure API Key Connection via UI Input
-groq_api_key = "PASTE_YOUR_ACTUAL_GSK_KEY_HERE"
+# 2. Hardcoded Secure API Key (No password box needed for friends)
+groq_api_key = "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"
 
-
-# 3. Define the System Prompt Engine (Strict Forensic Mode with Advanced Output)
+# 3. Define the System Prompt Engine
 SYSTEM_PROMPT = """
 You are a cynical, world-class forensic psychologist screening for covert narcissism, weaponized therapy-speak, and emotional unavailability. 
-Do not be fooled by wellness buzzwords. If a user uses psychology terms to evade accountability, punish them heavily.
+Do not be fooled by wellness buzzwords. If a user uses psychology terms to avoid accountability, punish them heavily.
 
 You MUST return a raw, valid JSON object ONLY matching this schema precisely. Do not include markdown tags:
 {
@@ -36,18 +35,17 @@ user_input = st.text_area(
     placeholder="Type your response here..."
 )
 
+# 5. Cleaned Up Activation Trigger (No duplicate buttons)
 if st.button("Submit Profile for Deep Behavioral Analysis"):
-   if st.button("Submit Profile for Deep Behavioral Analysis"):
     if not user_input:
-
         st.warning("Please input a sample text response to test.")
     else:
         with st.spinner("Executing forensic linguistic analysis..."):
             try:
-                # 5. Initialize the Official Groq Client
+                # Initialize the Official Groq Client
                 client = Groq(api_key=groq_api_key.strip())
                 
-                # 6. Call the Completion Request
+                # Call the Completion Request
                 response = client.chat.completions.create(
                     model="llama-3.1-8b-instant",
                     response_format={"type": "json_object"},
@@ -58,7 +56,7 @@ if st.button("Submit Profile for Deep Behavioral Analysis"):
                     temperature=0.2
                 )
                 
-                # 7. Extract and Render Output
+                # Extract and Render Output
                 raw_content = response.choices[0].message.content.strip()
                 parsed_result = json.loads(raw_content)
                 
