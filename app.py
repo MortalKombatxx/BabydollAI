@@ -3,9 +3,10 @@ import openai
 import json
 
 # 1. Setup Page Configurations
-st.set_page_config(page_title="BabydollAI Gateway", page_icon="🛡️", layout="centered")
-st.title("🛡️ SafeMatch AI: Onboarding Gateway")
+st.set_page_config(page_title="BabydollAI Gateway", page_icon="🎭", layout="centered")
+st.title("🎭 BabydollAI: Onboarding Gateway")
 st.write("Psychological preventative screening interface for high-value dating applications.")
+
 
 # 2. Secure API Key Connection via Streamlit Secrets
 openai.api_key = st.text_input("Enter OpenAI API Key to Test:", type="password")
