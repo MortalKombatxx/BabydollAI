@@ -58,7 +58,7 @@ if st.button("Submit Profile for Deep Behavioral Analysis"):
                 )
                 
                 # 7. Extract and Render Output
-                raw_content = response.choices.message.content.strip()
+                raw_content = response.choices[0].message.content.strip()
                 parsed_result = json.loads(raw_content)
                 
                 st.success("Analysis Complete!")
