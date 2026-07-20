@@ -59,8 +59,7 @@ if st.button("Execute Deep Behavioral Analysis"):
                     raw_content = response.choices.message.content.strip()
                 else:
                     from groq import Groq
-                    final_key = user_key.strip() if user_key else st.secrets.get("GROQ_API_KEY", "")
-                    client = Groq(api_key=final_key)
+                    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
                     response = client.chat.completions.create(
                         model="llama-3.1-8b-instant",
                         response_format={"type": "json_object"},
