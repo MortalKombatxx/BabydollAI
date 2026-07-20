@@ -56,7 +56,7 @@ if st.button("Execute Deep Behavioral Analysis"):
                         ],
                         temperature=0.0
                     )
-                    raw_content = response.choices.message.content.strip()
+                    raw_content = response.choices[0].message.content.strip()
                 else:
                     from groq import Groq
                     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
