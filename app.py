@@ -57,9 +57,11 @@ if st.button("Execute Deep Behavioral Analysis"):
                         temperature=0.0
                     )
                     raw_content = response.choices[0].message.content.strip()
-                else:
-                    from groq import Groq
-                    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+                    else:
+                        from groq import Groq
+                    # Automatically uses your hidden vault key, or falls back to typed key
+                    final_key = user_key.strip() if user_key else st.secrets.get("GROQ_API_KEY", "")
+                    client = Groq(api_key=final_key)
                     response = client.chat.completions.create(
                         model="llama-3.1-8b-instant",
                         response_format={"type": "json_object"},
@@ -69,9 +71,8 @@ if st.button("Execute Deep Behavioral Analysis"):
                         ],
                         temperature=0.0
                     )
-
-                    raw_content = response.choices[0].message.content.strip()
-
+                    raw_content = response.choices.message.content.strip()
+              
                 # Parse JSON Output Safely
                 parsed_result = json.loads(raw_content)
                 st.success("Linguistic Analysis Complete!")
