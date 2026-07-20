@@ -69,7 +69,7 @@ if st.button("Execute Deep Behavioral Analysis"):
                         ],
                         temperature=0.0
                     )
-                    raw_content = response.choices.message.content.strip()
+                    raw_content = response.choices[0].message.content.strip()
 
                 # Parse and Render Results Dashboard
                 parsed_result = json.loads(raw_content)
