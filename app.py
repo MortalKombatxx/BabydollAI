@@ -53,7 +53,8 @@ if st.button("Execute Deep Behavioral Analysis"):
                         messages=[
                             {"role": "system", "content": SYSTEM_PROMPT},
                             {"role": "user", "content": user_input}
-                        ]
+                        ],
+                        temperature=0.0
                     )
                     raw_content = response.choices[0].message.content.strip()
                 else:
@@ -65,8 +66,10 @@ if st.button("Execute Deep Behavioral Analysis"):
                         messages=[
                             {"role": "system", "content": SYSTEM_PROMPT},
                             {"role": "user", "content": user_input}
-                        ]
+                        ],
+                        temperature=0.0
                     )
+
                     raw_content = response.choices[0].message.content.strip()
 
                 # Parse JSON Output Safely
