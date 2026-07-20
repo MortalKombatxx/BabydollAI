@@ -57,7 +57,7 @@ if st.button("Execute Deep Behavioral Analysis"):
                         temperature=0.0
                     )
                     raw_content = response.choices[0].message.content.strip()
-                    else:
+                  else:
                         from groq import Groq
                     # Automatically uses your hidden vault key, or falls back to typed key
                     final_key = user_key.strip() if user_key else st.secrets.get("GROQ_API_KEY", "")
