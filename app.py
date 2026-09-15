@@ -8,7 +8,7 @@ st.write("Forensic behavioral screening middleware engineered via OpenAI Codex a
 
 # 2. Setup Sidebar Dropdown (Judges can toggle, friends can just click go)
 st.sidebar.header("🔑 Authentication Framework")
-provider = st.sidebar.selectbox("Select Inference Backbone:", ["Groq Llama-3.1 (Free Public Tier)", "OpenAI GPT-5.6 (Official Tier)"])
+provider = st.sidebar.selectbox("Select Inference Backbone:", ["Groq GPT-OSS 20B (Free Public Tier)", "OpenAI GPT-5.6 (Official Tier)"])
 user_key = st.sidebar.text_input("Enter Personal API Key (Optional Override):", type="password")
 
 # 3. Define System Prompt (Strict Forensic Calibration)
@@ -59,9 +59,10 @@ if st.button("Execute Deep Behavioral Analysis"):
                     raw_content = response.choices[0].message.content.strip()
                 else:
                     from groq import Groq
-                    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+                    final_key = user_key.strip() if user_key else st.secrets.get("GROQ_API_KEY", "")
+                    client = Groq(api_key=final_key)
                     response = client.chat.completions.create(
-                        model="llama-3.1-8b-instant",
+                        model="openai/gpt-oss-20b",
                         response_format={"type": "json_object"},
                         messages=[
                             {"role": "system", "content": SYSTEM_PROMPT},
