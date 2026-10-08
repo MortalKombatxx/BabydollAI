@@ -1,8 +1,8 @@
-# 🎭 BabydollAI: Preventative Behavioral Onboarding Middleware
+#BabydollAI: Preventative Behavioral Onboarding Middleware
 
 BabydollAI is an advanced behavioral screening infrastructure designed to integrate directly into dating application onboarding flows. It calculates adult attachment risk metrics, exposure risks, and flags weaponized "therapy-speak" before a user is permitted to enter a matching pool.
 
-## 🛠️ Official Challenge Infrastructure Alignment
+## Official Challenge Infrastructure Alignment
 
 This project was built from scratch following the exact requirements of the OpenAI Build Week Challenge.
 
@@ -17,7 +17,7 @@ The core engine of BabydollAI natively targets the **OpenAI GPT-5.6 production e
 ### 3. Resilience Fallback Pipeline
 To ensure high-frequency community testing could execute without hitting real-time production quota limitations, a hybrid configuration switcher was engineered. The runtime allows judges to plug in credentials to test the flagship **GPT-5.6 engine**, while providing an automated fallback route to an alternative inference engine pulling from encrypted server vaults.
 
-## 🎛️ Platform Local Setup
+## Platform Local Setup
 To run this application locally or verify the environment:
 1. Clone the repository and install dependencies: `pip install -r requirements.txt`
 2. Ensure your secret environment tokens are securely mapped within your host secrets infrastructure.
